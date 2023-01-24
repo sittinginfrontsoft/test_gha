@@ -1,0 +1,31 @@
+name: Build Internal
+on:
+  workflow_dispatch:
+    inputs:
+      build_type:
+        type: choice
+        description: 'Build type'
+        default: 'release'
+        options:
+        - release
+        - internal
+  schedule:
+    - cron: '*/5 * * * *'
+     
+      
+     
+    
+jobs:
+  print-tag:
+    runs-on: ubuntu-lates t
+    
+   
+       
+    steps:
+      - name: Print the input tag to STDOUT
+        if: inputs.build_type == 'internal'
+        run: echo  Step Internal 
+        
+      - name: Step 2
+        if: (inputs.build_type == 'release') || (github.event_name == 'schedule')
+        run: echo This step Release
