@@ -10,7 +10,7 @@ on:
         - release
         - internal
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '*/60 * * * *'
      
       
      
