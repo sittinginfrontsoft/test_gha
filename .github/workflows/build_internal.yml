@@ -17,7 +17,7 @@ on:
     
 jobs:
   print-tag:
-    runs-on: ubuntu-lates t
+    runs-on: ubuntu-latest
     
    
        
