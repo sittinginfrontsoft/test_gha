@@ -9,8 +9,8 @@ on:
         options:
         - release
         - internal
-  schedule:
-    - cron: '*/5 * * * *'
+ # schedule:
+  #  - cron: '30 * * * *'
      
       
      
