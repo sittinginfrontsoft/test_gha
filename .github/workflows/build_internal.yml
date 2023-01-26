@@ -16,16 +16,20 @@ on:
      
     
 jobs:
-  print-tag:
+  release:
+    if: (inputs.build_type == 'release') || (github.event_name == 'schedule')
     runs-on: ubuntu-latest
     
-   
-       
+    steps:
+      - name: Step 2
+        run: echo This step Release
+        
+  internal:
+    if: inputs.build_type == 'internal'
+    runs-on: ubuntu-latest
+    
     steps:
       - name: Print the input tag to STDOUT
-        if: inputs.build_type == 'internal'
-        run: echo  Step Internal 
+        run: echo  Internal job 
         
-      - name: Step 2
-        if: (inputs.build_type == 'release') || (github.event_name == 'schedule')
-        run: echo This step Release
+     
